@@ -5,16 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Common Sense Health House</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .animated-lines {
+    width: 900px;
+    height: 900px;
+    display: block;
+    margin-top: 0px; /* move it slightly down from header */
+    margin-left: 0;
+}
+
+
+
+ /* centers it */
+        
+
+        @media (max-width: 768px) {
+            .animated-lines path {
+                stroke-width: 1.5;
+            }
+        }
+    </style>
 </head>
 <body class="home-page">
-    <svg class="animated-lines left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,0 Q150,60 300,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
-      <path d="M0,40 Q150,100 300,40" stroke="#2ecfd3" stroke-width="3" fill="none"/>
-      <path d="M0,80 Q150,140 300,80" stroke="#2ecfd3" stroke-width="2.5" fill="none"/>
-      <path d="M0,120 Q150,180 300,120" stroke="#2ecfd3" stroke-width="2" fill="none"/>
-    </svg>
     <header>
-        <img src="assets/logo.png" alt="Common Sense Health Center Logo" class="logo">
+        <img src="assets/57a.PNG" alt="Common Sense Health Center Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="index.html">Welkom</a></li>
@@ -25,6 +39,15 @@
             </ul>
         </nav>
     </header>
+
+    <!-- SVG moved BELOW the header -->
+    <svg class="animated-lines" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet">
+        <path d="M0,700 A700,700 0 0,0 700,0" stroke="#2ecfd3" stroke-width="5" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" stroke="#2ecfd3" stroke-width="3.5" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" stroke="#2ecfd3" stroke-width="3" fill="none"/>
+    </svg>
+
     <main>
         <section class="hero">
             <h1>Welkom bij Common Sense Health House</h1>
@@ -34,6 +57,7 @@
             <a href="about.html" class="cta">Ontdek meer</a>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Common Sense Health House</p>
     </footer>
