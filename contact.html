@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Common Sense Health House</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+    <svg class="animated-lines left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 Q150,60 300,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
+      <path d="M0,40 Q150,100 300,40" stroke="#2ecfd3" stroke-width="3" fill="none"/>
+      <path d="M0,80 Q150,140 300,80" stroke="#2ecfd3" stroke-width="2.5" fill="none"/>
+      <path d="M0,120 Q150,180 300,120" stroke="#2ecfd3" stroke-width="2" fill="none"/>
+    </svg>
+    <header>
+        <img src="assets/logo.png" alt="Common Sense Health Center Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Welkom</a></li>
+                <li><a href="about.html">Over Mij</a></li>
+                <li><a href="lymfe.html">Lymfesysteem</a></li>
+                <li><a href="mylogenics.html">Mylogenics</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact">
+            <h1 style="font-size:2.3em; margin-bottom:0.4em; color:#2ecfd3;">Contact</h1>
+            <p>Neem gerust contact op voor meer informatie of het maken van een afspraak.</p>
+            <form class="contact-form" style="background:rgba(255,255,255,0.92); color:#232432; padding:2em 1.5em; border-radius:16px; box-shadow:0 2px 24px rgba(46,207,211,0.10); margin-bottom:1.5em;">
+                <label for="naam">Naam:</label>
+                <input type="text" id="naam" name="naam" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="bericht">Bericht:</label>
+                <textarea id="bericht" name="bericht" rows="5" required></textarea>
+                <button type="submit">Verzenden</button>
+            </form>
+            <div class="contact-info">
+                <p>E-mail: <a href="mailto:info@commonsensehealth.nl">info@commonsensehealth.nl</a></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Common Sense Health House</p>
+    </footer>
+</body>
+</html>
