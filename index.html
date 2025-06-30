@@ -29,7 +29,12 @@
 <body class="home-page">
     <header>
         <img src="assets/57a.PNG" alt="Common Sense Health Center Logo" class="logo">
-        <nav>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Welkom</a></li>
                 <li><a href="about.html">Over Mij</a></li>
@@ -46,12 +51,30 @@
         <path d="M0,600 A600,600 0 0,0 600,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
         <path d="M0,500 A500,500 0 0,0 500,0" stroke="#2ecfd3" stroke-width="3.5" fill="none"/>
         <path d="M0,400 A400,400 0 0,0 400,0" stroke="#2ecfd3" stroke-width="3" fill="none"/>
+        <path d="M0,700 A700,700 0 0,0 700,0" class="line-glow slow" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" class="line-glow accent" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" class="line-glow" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" class="line-glow fast" fill="none"/>
+    </svg>
+    <svg class="animated-lines bottom-right" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet">
+        <path d="M0,700 A700,700 0 0,0 700,0" stroke="#2ecfd3" stroke-width="5" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" stroke="#2ecfd3" stroke-width="3.5" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" stroke="#2ecfd3" stroke-width="3" fill="none"/>
+        <path d="M0,700 A700,700 0 0,0 700,0" class="line-glow slow" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" class="line-glow accent" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" class="line-glow" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" class="line-glow fast" fill="none"/>
     </svg>
 
     <main>
-        <section class="hero">
+        <section class="hero section">
+            <div class="hero-images" style="display: flex; justify-content: center; align-items: center; gap: 2em; margin-bottom: 2em; flex-wrap: wrap;">
+                <img src="assets\Afbeelding van WhatsApp op 2025-03-21 om 13.13.30_03059b88.png" alt="Home Photo" class="hero-photo" style="max-width:340px; width:100%; border-radius:1.5em; box-shadow:0 4px 32px rgba(46,207,211,0.13);">
+                <img src="assets/57a.PNG" alt="Common Sense Health Center Logo" width="340" height="auto" />                  
+            </div>
             <h1>Welkom bij Common Sense Health House</h1>
-            <p>Voor een gezond Lichaam & Brein, met coach Samantha.</p>
+            <p>Voor een gezond Lichaam &amp; Brein, met coach Samantha.</p>
             <p>Professionele begeleiding naar een vitaal leven door ervaring en geleerde kennis over de connectie en samenwerking van het menselijk lichaam en brein, algemene gezondheid en darmgezondheid, goede beweging, gezonde voeding en het (g)lymfatische systeem.</p>
             <p>Voor Smallgroup outdoor trainingen en indoor behandelingen met veel selfcare technieken bent u bij CSHH aan het juiste adres.</p>
             <a href="about.html" class="cta">Ontdek meer</a>
@@ -61,5 +84,37 @@
     <footer>
         <p>&copy; 2025 Common Sense Health House</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.getElementById('nav-menu');
+            
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const nav = document.getElementById('nav-menu');
+                
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.getElementById('nav-menu');
+            
+            if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

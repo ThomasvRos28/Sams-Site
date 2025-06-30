@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="lymfe-page">
-    <svg class="animated-lines left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,0 Q150,60 300,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
-      <path d="M0,40 Q150,100 300,40" stroke="#2ecfd3" stroke-width="3" fill="none"/>
-      <path d="M0,80 Q150,140 300,80" stroke="#2ecfd3" stroke-width="2.5" fill="none"/>
-      <path d="M0,120 Q150,180 300,120" stroke="#2ecfd3" stroke-width="2" fill="none"/>
-    </svg>
     <header>
-        <img src="assets/logo.png" alt="Common Sense Health Center Logo" class="logo">
-        <nav>
+        <img src="assets/57a.PNG" alt="Common Sense Health Center Logo" class="logo">
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Welkom</a></li>
                 <li><a href="about.html">Over Mij</a></li>
@@ -25,9 +24,29 @@
             </ul>
         </nav>
     </header>
+    <svg class="animated-lines" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet">
+        <path d="M0,700 A700,700 0 0,0 700,0" stroke="#2ecfd3" stroke-width="5" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" stroke="#2ecfd3" stroke-width="3.5" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" stroke="#2ecfd3" stroke-width="3" fill="none"/>
+        <path d="M0,700 A700,700 0 0,0 700,0" class="line-glow slow" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" class="line-glow accent" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" class="line-glow" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" class="line-glow fast" fill="none"/>
+    </svg>
+    <svg class="animated-lines bottom-right" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet">
+        <path d="M0,700 A700,700 0 0,0 700,0" stroke="#2ecfd3" stroke-width="5" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" stroke="#2ecfd3" stroke-width="4" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" stroke="#2ecfd3" stroke-width="3.5" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" stroke="#2ecfd3" stroke-width="3" fill="none"/>
+        <path d="M0,700 A700,700 0 0,0 700,0" class="line-glow slow" fill="none"/>
+        <path d="M0,600 A600,600 0 0,0 600,0" class="line-glow accent" fill="none"/>
+        <path d="M0,500 A500,500 0 0,0 500,0" class="line-glow" fill="none"/>
+        <path d="M0,400 A400,400 0 0,0 400,0" class="line-glow fast" fill="none"/>
+    </svg>
     <main>
-        <section class="lymfe" style="max-width:760px; margin:0 auto; background:rgba(255,255,255,0.92); color:#232432; padding:2.5em 2em; border-radius:18px; box-shadow:0 2px 32px rgba(46,207,211,0.08); position:relative; z-index:1;">
-            <h1 style="font-size:2.3em; margin-bottom:0.4em; color:#169fa3;">Het Lymfatische Systeem</h1>
+        <section class="section section-light">
+            <h1>Het Lymfatische Systeem</h1>
             <p>Het meeste vergeten maar oh zo cruciale systeem voor uw gezondheid en welzijn.</p>
             <h2>Herkent u deze signalen?</h2>
             <ul>
@@ -42,7 +61,7 @@
             </ul>
             <p>Je lichaam vertelt zoveel maar soms mis je bepaalde signalen.</p>
             <h2>Wat kunt u doen om uw lymfestelsel te ondersteunen en verbeteren:</h2>
-            <ol style="background:rgba(122,215,219,0.07); padding:1.2em 1.5em; border-radius:12px;">
+            <ol>
                 <li>Het kan zijn dat u geen lymfeprobleem heeft, maar u moet het uitsluiten!</li>
                 <li>Een Hands-on Assessment: Een professionele evaluatie is essentieel. Mijn manier van controleren is via een hands-on assessment om de status van uw lymfestelsel te bepalen.</li>
                 <li>Het traject per individu: Op basis van het assessment gaan we het traject in om uw lymfestelsel te optimaliseren, afgestemd op uw specifieke situatie, de reactie van het lichaam en behoeften.</li>
@@ -58,5 +77,37 @@
     <footer>
         <p>&copy; 2025 Common Sense Health House</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.getElementById('nav-menu');
+            
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const nav = document.getElementById('nav-menu');
+                
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.getElementById('nav-menu');
+            
+            if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
